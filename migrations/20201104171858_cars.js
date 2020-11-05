@@ -5,11 +5,10 @@ exports.up = async function(knex) {
     await knex.schema.createTable("cars", tbl =>{
         // creates a primary key called id
         tbl.increments();
-        // creates a column for a VIN number
-        tbl.varchar("VIN").unique().notNullable();
-        tbl.text("Make", 128).notNullable();
-        tbl.integer("Model").notNullable();
-        tbl.integer("Mileage").notNullable();
+        tbl.varchar("vin").unique().notNullable();
+        tbl.text("make", 128).notNullable();
+        tbl.text("model").notNullable();
+        tbl.integer("mileage").notNullable();
         tbl.text("tramission")
         tbl.text("status")
     })
